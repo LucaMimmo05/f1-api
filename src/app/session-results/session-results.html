@@ -1,0 +1,27 @@
+<section class="session-results">
+    <div class="session-results-top">
+        <h1>Risultati Sessione</h1>
+        <p-table [value]="sessionResults" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template #header>
+                <tr>
+                    <th>Posizione</th>
+                    <th>Pilota</th>
+                    <th>Non ha Iniziato</th>
+                    <th>Non Ha Finito</th>
+                    <th>E' stato squalificato</th>
+                    <th>Distanza dal primo</th>
+                </tr>
+            </ng-template>
+            <ng-template #body let-sessionResult>
+                <tr>
+                    <td>{{ sessionResult.position }}</td>
+                    <td>{{ sessionResult.driverName }}</td>
+                    <td>{{ sessionResult.dns ? "Si" : "No" }}</td>
+                    <td>{{ sessionResult.dnf ? "Si" : "No" }}</td>
+                    <td>{{ sessionResult.dsq ? "Si" : "No" }}</td>
+                    <td>{{ sessionResult.gap_to_leader }}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</section>
