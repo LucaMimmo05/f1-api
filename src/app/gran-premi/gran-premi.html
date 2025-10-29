@@ -1,1 +1,30 @@
-<p>gran-premi works!</p>
+<section class="gran-premi">
+    <div class="gran-premi-header">
+        <h2>Gran Premi F1 {{ selectedYear }}</h2>
+        <p-select [options]="years" [(ngModel)]="selectedYear" (onChange)="onYearChange()"
+            [style]="{'width': '110px'}" />
+    </div>
+
+
+    <div class="meetings-container">
+        @if (meetings.length === 0) {
+        <p>Nessun gran premio trovato per l'anno selezionato.</p>
+        } @else {
+        <div class="gran-premi-content">
+            @for (meeting of meetings; track meeting.meeting_key) {
+            <p-card [header]="meeting.meeting_name">
+                <p><strong>Città:</strong> {{ meeting.location }}, {{ meeting.country_name }}</p>
+                <p><strong>Circuito:</strong> {{ meeting.circuit_short_name }}</p>
+                <p><strong>Data inizio:</strong> {{ meeting.date_start | date }}</p>
+
+                <ng-template pTemplate="footer">
+                    <div class="gran-premi-btn">
+                        <p-button (click)="onDetailsClick(meeting)" label="Dettagli" icon="pi pi-info-circle" />
+                    </div>
+                </ng-template>
+            </p-card>
+            }
+        </div>
+        }
+    </div>
+</section>
