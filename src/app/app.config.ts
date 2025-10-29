@@ -13,7 +13,7 @@ import { provideHttpClient } from '@angular/common/http';
 export const appConfig: ApplicationConfig = {
   providers: [
     providePrimeNG({
-      theme: { preset: Aura, options: { prefix: 'p', darkModeSelector: '.dark-theme' } },
+      theme: { preset: Aura, options: { prefix: 'p', darkModeSelector: '.dark' } },
       ripple: true,
     }),
     provideAnimationsAsync(),
