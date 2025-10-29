@@ -1,0 +1,25 @@
+.piloti-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.piloti-card {
+  border: 1px solid #ccc;
+  height: 350px;
+  overflow: hidden;
+}
+
+.pilot-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 200px;
+  overflow: hidden;
+}
+.pilot-card-header img {
+  width: 200px;
+  object-fit: contain;
+}

@@ -1,1 +1,23 @@
-<p>piloti works!</p>
+<section class="piloti">
+    <div class="piloti-header">
+        <h1>Piloti Principali</h1>
+    </div>
+
+    <div class="piloti-content">
+        @for (driver of filteredDrivers; track $index) {
+
+
+        <p-card class="piloti-card">
+            <ng-template #header>
+                <div [style.background-color]="'#' + driver.team_colour" class="pilot-card-header">
+                    <img alt="" class="w-full" [src]="driver?.headshot_url" />
+                </div>
+            </ng-template>
+            <h2>{{driver.first_name}} {{driver.last_name}}</h2>
+            <p>Team: {{driver.team_name}}</p>
+
+        </p-card>
+        }
+
+    </div>
+</section>
