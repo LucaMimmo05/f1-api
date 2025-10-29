@@ -4,6 +4,14 @@
     </ng-template>
 
     <ng-template pTemplate="end">
-        <p-toggleSwitch onLabel="Dark" offLabel="Light" styleClass="mr-2"></p-toggleSwitch>
+        <p-toggleSwitch [(ngModel)]="isDarkTheme" (onChange)="handleTheme()">
+            <ng-template #handle let-checked="checked">
+                <i style="font-size: 0.9rem;"  class="{{isDarkTheme ? 'pi pi-moon' : 'pi pi-sun'}}"></i>
+            </ng-template>
+        </p-toggleSwitch>
+
+
+
+
     </ng-template>
 </p-menubar>
