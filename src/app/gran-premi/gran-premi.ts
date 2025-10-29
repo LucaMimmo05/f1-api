@@ -1,6 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { F1Service } from '../service/f1-service';
-import { GranPremio } from '../gran-premio/gran-premio';
 import { CardModule } from 'primeng/card';
 import { Meeting } from '../models/metting';
 import { CommonModule } from '@angular/common';
@@ -11,7 +10,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gran-premi',
-  imports: [GranPremio, CardModule, CommonModule, SelectModule, FormsModule, ButtonModule],
+  imports: [CardModule, CommonModule, SelectModule, FormsModule, ButtonModule],
   templateUrl: './gran-premi.html',
   styleUrl: './gran-premi.css',
 })
@@ -34,7 +33,7 @@ export class GranPremi implements OnInit {
     this.getMeetings(this.selectedYear);
   }
 
-  onDetailsClick(meeting : Meeting) {
+  onDetailsClick(meeting: Meeting) {
     this.router.navigate(['/gran-premio', meeting.meeting_key]);
   }
 }
