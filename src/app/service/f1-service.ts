@@ -40,4 +40,12 @@ export class F1Service {
     const result = await firstValueFrom(drivers);
     return result.slice(0,4);
   }
+
+  async getDriversWithoutMeeting() : Promise<Driver[]> {
+    const drivers = this.httpClient.get<Driver[]>(
+      this.apiUrl + '/drivers'
+    );
+    const result = await firstValueFrom(drivers);
+    return result;
+  }
 }
