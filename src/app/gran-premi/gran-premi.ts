@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gran-premi',
-  imports: [CardModule, CommonModule, SelectModule, FormsModule, ButtonModule],
+  imports: [CardModule, CommonModule, SelectModule, FormsModule, ButtonModule, ],
   templateUrl: './gran-premi.html',
   styleUrl: './gran-premi.css',
 })

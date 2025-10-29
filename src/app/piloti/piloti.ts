@@ -19,14 +19,6 @@ export class Piloti {
   }
 
   async getDrivers() {
-    this.drivers = await this.f1Service.getDriversWithoutMeeting();
-
-    const uniqueDriversMap = new Map<number, Driver>();
-    this.drivers.forEach((driver) => {
-      if (!uniqueDriversMap.has(driver.driver_number)) {
-        uniqueDriversMap.set(driver.driver_number, driver);
-      }
-    });
-    this.filteredDrivers = Array.from(uniqueDriversMap.values());
+    this.drivers = await this.f1Service.getDrivers();
   }
 }
