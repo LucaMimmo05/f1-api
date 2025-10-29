@@ -1,18 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { MenubarModule } from 'primeng/menubar';
+import { ToggleSwitchModule } from 'primeng/toggleswitch';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
-  imports: [MenubarModule],
+  standalone: true,
+  imports: [MenubarModule, ToggleSwitchModule, RouterLink],
   templateUrl: './menu.html',
-  styleUrl: './menu.css',
+  styleUrls: ['./menu.css'],
 })
 export class Menu {
-    menuItems = [
-        { label: 'Home', routerLink: '/' },
-        { label: 'Drivers', routerLink: '/drivers' },
-        { label: 'Constructors', routerLink: '/constructors' },
-        { label: 'Circuits', routerLink: '/circuits' },
-    ];
+  menuItems = [
+    { label: 'Home', routerLink: '/' },
+    { label: 'Gran Premi', routerLink: '/gran-premi' },
+  ];
 }

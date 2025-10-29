@@ -1,1 +1,9 @@
-<p-menubar [model]="menuItems" />
+<p-menubar [model]="menuItems">
+    <ng-template pTemplate="start">
+        <img src="f1.png" height="25" class="mr-2" />
+    </ng-template>
+
+    <ng-template pTemplate="end">
+        <p-toggleSwitch onLabel="Dark" offLabel="Light" styleClass="mr-2"></p-toggleSwitch>
+    </ng-template>
+</p-menubar>
