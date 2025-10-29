@@ -38,17 +38,7 @@
   margin-top: 0.5rem;
 }
 
-@media (max-width: 768px) {
-  .drivers-content {
-    grid-template-columns: 1fr;
-  }
-
-  .card-header {
-    min-height: 150px;
-    padding: 1rem;
-  }
-
-  .card-header img {
-    max-height: 140px;
-  }
+.details-btn {
+  display: flex;
+  justify-content: flex-end;
 }
