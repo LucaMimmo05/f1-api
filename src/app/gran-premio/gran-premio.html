@@ -2,4 +2,25 @@
     <div class="gran-premio-header">
         <h2>{{meeting?.meeting_name}}</h2>
     </div>
+    @for (session of sessions; track session.session_key) {
+    <p-card [header]="session?.session_name">
+        <p><strong>Data Sessione:</strong> {{ session?.date_start | date }}</p>
+        <p><strong>Piloti Principali:</strong></p>
+        <div class="drivers-content">
+            @for (driver of drivers; track driver.driver_number) {
+            <p-card [style]="{ flex: '1', overflow: 'hidden' }">
+                <ng-template #header>
+                    <div [style.background-color]="'#' + driver.team_colour" class="card-header">
+                        <img alt="Card" class="w-full" [src]="driver?.headshot_url" />
+                    </div>
+                </ng-template>
+                <ng-template #title> {{driver.first_name}} {{driver.last_name}} </ng-template>
+                <ng-template #subtitle> {{driver.team_name}} </ng-template>
+
+
+            </p-card>
+            }
+        </div>
+    </p-card>
+    }
 </section>
