@@ -10,15 +10,15 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gran-premi',
-  imports: [CardModule, CommonModule, SelectModule, FormsModule, ButtonModule, ],
+  imports: [CardModule, CommonModule, SelectModule, FormsModule, ButtonModule],
   templateUrl: './gran-premi.html',
   styleUrl: './gran-premi.css',
 })
 export class GranPremi implements OnInit {
   f1Service = inject(F1Service);
   meetings: Meeting[] = [];
-  years: number[] = [2024, 2023];
-  selectedYear: number = 2024;
+  years: number[] = [2025, 2024, 2023];
+  selectedYear: number = 2025;
   router = inject(Router);
 
   ngOnInit() {
